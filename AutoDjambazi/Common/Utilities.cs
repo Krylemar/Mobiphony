@@ -1,6 +1,7 @@
 ﻿namespace AutoDjambazi.Common
 {
-	public static class Utilities
+    /// <summary>Клас за всеобщо ползване - съдържа поезни функции</summary>
+    public static class Utilities
 	{
 		//-------------------------
 		//Constants:
@@ -34,8 +35,9 @@
 
 			return default;
 		}
-		//-------------------------
-		//Overrides:
-		//-------------------------
-	}
+
+        //-------------------------
+        //Overrides:
+        //-------------------------
+    }
 }

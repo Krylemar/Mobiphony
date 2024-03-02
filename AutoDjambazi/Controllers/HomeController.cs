@@ -6,7 +6,7 @@
 	#endregion
 
 	/// <summary>Контролер обслужващ Index.cshtml</summary>
-	public class IndexController : Controller
+	public class HomeController : Controller
     {
         //-------------------------
         //Constants:
