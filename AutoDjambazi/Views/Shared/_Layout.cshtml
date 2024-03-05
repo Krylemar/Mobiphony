@@ -11,6 +11,15 @@
 	<title>@ViewBag.Title</title>
 </head>
 <body>
-	@RenderBody()
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" fixed>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Navbar</a>
+            <a class="navbar-brand" href="#">Features</a>
+            <a class="navbar-brand" href="#">Pricing</a>
+            <a class="navbar-brand" aria-disabled="true">Disabled</a>
+            <a class="navbar-brand" href="@Url.Action("AboutUs", "Extra")">Go to AboutUs</a>
+        </div>
+    </nav>
+    @RenderBody()
 </body>
 </html>
