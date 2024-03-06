@@ -15,6 +15,10 @@ namespace AutoDjambazi.Controllers
         {
             return View();
         }
+        public ActionResult AddForm()
+        {
+            return View();
+        }
 
         // GET: Extra/Details/5
         public ActionResult Details(int id)
