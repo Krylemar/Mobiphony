@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoDjambazi.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace AutoDjambazi.Models
+namespace AutoDjambazi.Data
 {
     public class DatabaseContext : DbContext
     {
@@ -8,7 +9,7 @@ namespace AutoDjambazi.Models
 
         public DatabaseContext(DbContextOptions options) : base(options)
         {
-            
+
         }
     }
 }

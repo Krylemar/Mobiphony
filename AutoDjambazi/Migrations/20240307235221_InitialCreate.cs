@@ -58,7 +58,7 @@ namespace AutoDjambazi.Migrations
         }
 
         /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
+        protected override void Down(MigrationBuilder migrationBuilder) // This is basicly a rollback if Up func fails
         {
             migrationBuilder.DropTable(
                 name: "Phones");
