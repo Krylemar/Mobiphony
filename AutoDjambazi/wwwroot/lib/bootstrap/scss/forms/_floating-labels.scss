@@ -21,7 +21,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     pointer-events: none;
-    border: $input-border-width solid transparent; // Required for aligning label's text with the input as it affects inner box model
+    border: $input-border-width solid transparent; //  for aligning label's text with the input as it affects inner box model
     transform-origin: 0 0;
     @include transition($form-floating-transition);
   }
@@ -80,12 +80,12 @@
 
   > .form-control-plaintext {
     ~ label {
-      border-width: $input-border-width 0; // Required to properly position label text - as explained above
+      border-width: $input-border-width 0; //  to properly position label text - as explained above
     }
   }
 
   > :disabled ~ label,
-  > .form-control:disabled ~ label { // Required for `.form-control`s because of specificity
+  > .form-control:disabled ~ label { //  for `.form-control`s because of specificity
     color: $form-floating-label-disabled-color;
 
     &::after {

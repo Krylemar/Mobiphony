@@ -3,6 +3,7 @@ using AutoDjambazi.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoDjambazi.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20240309121552_AddMockupDataMigration")]
+    partial class AddMockupDataMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,9 +45,11 @@ namespace AutoDjambazi.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("CPU")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Chipset")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Dsize")
@@ -60,6 +65,7 @@ namespace AutoDjambazi.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("GPU")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IPRating")
@@ -72,12 +78,14 @@ namespace AutoDjambazi.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("MCFeatures")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("MCMP")
                         .HasColumnType("float");
 
                     b.Property<string>("MCVideo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Matrix")
@@ -87,6 +95,7 @@ namespace AutoDjambazi.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("OS")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
@@ -102,24 +111,28 @@ namespace AutoDjambazi.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("SCFeatures")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("SCMP")
                         .HasColumnType("float");
 
                     b.Property<string>("SCVideo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SIM")
                         .HasColumnType("int");
 
                     b.Property<string>("ScrProtection")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Thickness")
                         .HasColumnType("float");
 
                     b.Property<string>("USBType")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("USBVersion")
