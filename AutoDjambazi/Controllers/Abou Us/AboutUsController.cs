@@ -31,6 +31,12 @@ namespace AutoDjambazi.Controllers
             return View();
         }
 
+        public ActionResult DbConnect()
+        {
+
+            return View();
+        }
+
         //-------------------------
         //Overrides:
         //-------------------------
