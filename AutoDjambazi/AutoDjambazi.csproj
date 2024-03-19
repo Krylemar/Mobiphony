@@ -21,8 +21,4 @@
     <PackageReference Include="MySqlConnector.DependencyInjection" Version="2.3.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>
