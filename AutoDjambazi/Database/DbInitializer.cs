@@ -36,7 +36,7 @@
                 context.AddRange
                 (
                     new Phones() { CPU = "Intel"}
-                );; 
+                );
             }
 
             context.SaveChanges();

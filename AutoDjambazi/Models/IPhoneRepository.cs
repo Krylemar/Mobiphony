@@ -1,8 +1,8 @@
-﻿using System.IO.Pipelines;
-
-namespace AutoDjambazi.Models
+﻿namespace AutoDjambazi.Models
 {
-    public interface IPhoneRepository
+	#region
+	#endregion
+	public interface IPhoneRepository
     {
         IEnumerable<Phones> SelectAllPhones { get; }
         Phones? GetPhoneByID(int id);

@@ -1,12 +1,12 @@
-﻿namespace AutoDjambazi.Controllers
+﻿namespace AutoDjambazi.Controllers.Home
 {
-	#region
-	using Microsoft.AspNetCore.Mvc;
-	using AutoDjambazi.Common;
-	#endregion
+    #region
+    using Microsoft.AspNetCore.Mvc;
+    using AutoDjambazi.Common;
+    #endregion
 
-	/// <summary>Контролер обслужващ Index.cshtml</summary>
-	public class HomeController : Controller
+    /// <summary>Контролер обслужващ Index.cshtml</summary>
+    public class HomeController : Controller
     {
         //-------------------------
         //Constants:
@@ -27,6 +27,7 @@
         //-------------------------
         //Methods:
         //-------------------------
+
         public IActionResult Index()
         {
             ViewBag.Title = Messages.MSG_WEBISTE_TITLE;

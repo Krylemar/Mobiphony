@@ -1,5 +1,4 @@
-﻿
-using AutoDjambazi.Database;
+﻿using AutoDjambazi.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutoDjambazi.Models
@@ -7,7 +6,6 @@ namespace AutoDjambazi.Models
     /// <summary>Табличен клас за телефоните</summary>
     public class PhonesRepository : IPhoneRepository
     {
-
         //-------------------------
         //Constants:
         //-------------------------
