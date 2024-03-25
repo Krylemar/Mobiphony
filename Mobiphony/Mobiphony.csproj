@@ -20,5 +20,4 @@
     <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="MySqlConnector.DependencyInjection" Version="2.3.5" />
   </ItemGroup>
-
 </Project>
