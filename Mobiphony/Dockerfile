@@ -9,17 +9,17 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["AutoDjambazi/AutoDjambazi.csproj", "AutoDjambazi/"]
-RUN dotnet restore "./AutoDjambazi/AutoDjambazi.csproj"
+COPY ["Mobiphony/Mobiphony.csproj", "Mobiphony/"]
+RUN dotnet restore "./Mobiphony/Mobiphony.csproj"
 COPY . .
-WORKDIR "/src/AutoDjambazi"
-RUN dotnet build "./AutoDjambazi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Mobiphony"
+RUN dotnet build "./Mobiphony.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./AutoDjambazi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Mobiphony.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AutoDjambazi.dll"]
+ENTRYPOINT ["dotnet", "Mobiphony.dll"]
