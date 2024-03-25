@@ -31,6 +31,11 @@ namespace Mobiphony.Controllers
             return View();
         }
 
+        public ActionResult DbConnect()
+        {
+
+            return View();
+        }
         //-------------------------
         //Overrides:
         //-------------------------
