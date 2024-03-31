@@ -40,5 +40,11 @@ namespace Mobiphony.Models
 
         public Phones? GetPhoneByID(int id)
             => _dbContext.Phones.SingleOrDefault(row => row.Id == id);
-    }
+
+        public void InsertPhone(Phones phone)
+        {
+			_dbContext.Add(phone);
+			_dbContext.SaveChanges();
+		}
+	}
 }
