@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Mobiphony.Controllers.AddNewPhone
+﻿namespace Mobiphony.Controllers.AddNewPhone
 {
 	#region
+	using Microsoft.AspNetCore.Mvc;
+	using Mobiphony.Models;
 	#endregion
 
 	/// <summary></summary>
@@ -15,6 +15,7 @@ namespace Mobiphony.Controllers.AddNewPhone
 		//-------------------------
 		//Members:
 		//-------------------------
+		private readonly IPhoneRepository _phonesRepository;
 
 		//-------------------------
 		//Properties:
@@ -23,13 +24,28 @@ namespace Mobiphony.Controllers.AddNewPhone
 		//-------------------------
 		//Constructor/Destructor:
 		//-------------------------
+		public AddNewPhoneController(IPhoneRepository phoneRepository)
+		{
+			this._phonesRepository = phoneRepository;
+		}
+
+		public IActionResult AddNewPhone()
+		{
+			return View();
+		}
 
 		//-------------------------
 		//Methods:
 		//-------------------------
-		public IActionResult AddNewPhone()
+		[HttpPost]
+		public IActionResult AddNewPhone(Phones phone)
 		{
-			return View();
+			if (ModelState.IsValid)
+			{
+				_phonesRepository.InsertPhone(phone);
+			}
+
+			return View();		
 		}
 		//-------------------------
 		//Overrides:
