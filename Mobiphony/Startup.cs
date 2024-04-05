@@ -26,6 +26,5 @@ if(app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 
 app.MapDefaultControllerRoute();
-app.UseHealthChecks("/health");
 
 app.Run();
