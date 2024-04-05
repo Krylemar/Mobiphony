@@ -35,8 +35,8 @@
             {
                 context.AddRange
                 (
-                    new Phones() { CPU = "Intel"}
-                );
+                    new Phones() { Model = "huawei-p30-pro" }
+                ); 
             }
 
             context.SaveChanges();

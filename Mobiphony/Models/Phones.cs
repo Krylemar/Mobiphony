@@ -4,7 +4,7 @@
     {
         public  int Id { get; set; }
 
-
+        public required string Model { get; set; }
 
         // Dimentions
         public  double Length { get; set; }
@@ -51,9 +51,6 @@
         public  double SCMP { get; set; }
         public  string? SCVideo { get; set; }
         public  string? SCFeatures { get; set; }
-
-
-
         // Software
         public  string? OS { get; set; }
         public  double WiFiSpeed { get; set; }

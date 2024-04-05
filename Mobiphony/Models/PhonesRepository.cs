@@ -6,25 +6,24 @@ namespace Mobiphony.Models
     /// <summary>Табличен клас за телефоните</summary>
     public class PhonesRepository : IPhoneRepository
     {
-        //-------------------------
-        //Constants:
-        //-------------------------
-        private readonly DatabaseContext _dbContext;
+		//-------------------------
+		//Constants:
+		//-------------------------
+		private readonly DatabaseContext _databaseContext;
+		//-------------------------
+		//Members:
+		//-------------------------
 
-        //-------------------------
-        //Members:
-        //-------------------------
+		//-------------------------
+		//Properties:
+		//-------------------------
 
-        //-------------------------
-        //Properties:
-        //-------------------------
-
-        //-------------------------
-        //Constructor/Destructor:
-        //-------------------------
-        public PhonesRepository(DatabaseContext _dbContext)
+		//-------------------------
+		//Constructor/Destructor:
+		//-------------------------
+		public PhonesRepository(DatabaseContext _dbContext)
         {
-            this._dbContext = _dbContext;
+            this._databaseContext = _dbContext;
         }
 
         //-------------------------
@@ -36,15 +35,15 @@ namespace Mobiphony.Models
         //-------------------------
 
         public IEnumerable<Phones> SelectAllPhones
-            => _dbContext.Phones.ToList();
+            => _databaseContext.Phones.ToList();
 
         public Phones? GetPhoneByID(int id)
-            => _dbContext.Phones.SingleOrDefault(row => row.Id == id);
+            => _databaseContext.Phones.SingleOrDefault(row => row.Id == id);
 
         public void InsertPhone(Phones phone)
         {
-			_dbContext.Add(phone);
-			_dbContext.SaveChanges();
+			_databaseContext.Add(phone);
+			_databaseContext.SaveChanges();
 		}
 	}
 }
