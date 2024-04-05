@@ -38,7 +38,7 @@
 		//Methods:
 		//-------------------------
 		[HttpPost]
-		public IActionResult Insert(Phones phone)
+		public IActionResult AddNewPhone(Phones phone)
 		{
 			if (ModelState.IsValid)
 			{
