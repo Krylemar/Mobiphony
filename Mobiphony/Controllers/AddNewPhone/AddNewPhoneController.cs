@@ -38,12 +38,15 @@
 		//Methods:
 		//-------------------------
 		[HttpPost]
-		public IActionResult AddNewPhone(Phones phone)
+		public IActionResult Insert(Phones phone)
 		{
 			if (ModelState.IsValid)
 			{
 				_phonesRepository.InsertPhone(phone);
 			}
+
+			//TODO ADAM:
+			//редиркт ей тука трябва да имаме + валидация горе
 
 			return View();		
 		}
