@@ -6,5 +6,7 @@
     {
         IEnumerable<Phones> SelectAllPhones { get; }
         Phones? GetPhoneByID(int id);
-    }
+
+		void InsertPhone(Phones phone); // (may remove)
+	}
 }

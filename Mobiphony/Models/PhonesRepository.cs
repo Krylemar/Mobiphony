@@ -9,7 +9,7 @@ namespace Mobiphony.Models
         //-------------------------
         //Constants:
         //-------------------------
-        private readonly DatabaseContext _dbContext;
+        private readonly DatabaseContext _databaseContext;
 
         //-------------------------
         //Members:
@@ -24,7 +24,7 @@ namespace Mobiphony.Models
         //-------------------------
         public PhonesRepository(DatabaseContext _dbContext)
         {
-            this._dbContext = _dbContext;
+            this._databaseContext = _dbContext;
         }
 
         //-------------------------
@@ -36,9 +36,15 @@ namespace Mobiphony.Models
         //-------------------------
 
         public IEnumerable<Phones> SelectAllPhones
-            => _dbContext.Phones.ToList();
+            => _databaseContext.Phones.ToList();
 
         public Phones? GetPhoneByID(int id)
-            => _dbContext.Phones.SingleOrDefault(row => row.Id == id);
-    }
+            => _databaseContext.Phones.SingleOrDefault(row => row.Id == id);
+
+		public void InsertPhone(Phones phone)
+		{
+			_databaseContext.Add(phone);
+			_databaseContext.SaveChanges();
+		}
+	}
 }

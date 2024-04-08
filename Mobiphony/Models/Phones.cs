@@ -4,10 +4,12 @@
     {
         public  int Id { get; set; }
 
+		public required string Model { get; set; }
 
 
-        // Dimentions
-        public  double Length { get; set; }
+
+		// Dimentions
+		public  double Length { get; set; }
         public  double Width { get; set; }
         public  double Thickness { get; set; }
 
