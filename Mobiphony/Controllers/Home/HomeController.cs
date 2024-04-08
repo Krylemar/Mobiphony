@@ -29,8 +29,7 @@
         //-------------------------
 
         public IActionResult Index()
-        {
-            ViewBag.Title = Messages.MSG_WEBISTE_TITLE;
+        { 
             return View();
         }
 

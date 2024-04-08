@@ -3,56 +3,30 @@
 	#region
 	using Microsoft.AspNetCore.Mvc;
 	using Mobiphony.Models;
-	#endregion
+    using Mobiphony.Services;
+    #endregion
 
-	/// <summary></summary>
-	public class AddNewPhoneController : Controller
+    /// <summary></summary>
+    public class AddNewPhoneController : Controller
 	{
-		//-------------------------
-		//Constants:
-		//-------------------------
-
-		//-------------------------
-		//Members:
-		//-------------------------
-		private readonly IPhoneRepository _phonesRepository;
-
-		//-------------------------
-		//Properties:
-		//-------------------------
-
-		//-------------------------
-		//Constructor/Destructor:
-		//-------------------------
-		public AddNewPhoneController(IPhoneRepository phoneRepository)
+		private readonly PhoneRepository _phoneRepository;
+		public AddNewPhoneController(PhoneRepository phoneRepository)
 		{
-			this._phonesRepository = phoneRepository;
+			_phoneRepository = phoneRepository;
 		}
 
+		[HttpGet]	
 		public IActionResult AddNewPhone()
 		{
 			return View();
 		}
 
-		//-------------------------
-		//Methods:
-		//-------------------------
 		[HttpPost]
-		public IActionResult AddNewPhone(Phones phone)
+		public IActionResult AddNewPhone(Phone phone)
 		{
-			if (ModelState.IsValid)
-			{
-				_phonesRepository.InsertPhone(phone);
-			}
-
-			//TODO ADAM:
-			//редиркт ей тука трябва да имаме + валидация горе
-
+			_phoneRepository.AddPhone(phone);
 			return View();		
 		}
-		//-------------------------
-		//Overrides:
-		//-------------------------
 	}
 }
 

@@ -1,7 +1,10 @@
-﻿namespace Mobiphony.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mobiphony.Models
 {
-    public class Phones
+    public class Phone
     {
+        [Key]
         public  int Id { get; set; }
 
         public required string Model { get; set; }
