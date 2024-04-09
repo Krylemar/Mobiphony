@@ -15,18 +15,24 @@
 			_phoneRepository = phoneRepository;
 		}
 
-		[HttpGet]	
-		public IActionResult AddNewPhone()
-		{
-			return View();
-		}
+        [HttpGet]
+        public IActionResult AddNewPhone(Phone phone)
+        {
+            return View(phone);
+        }
 
-		[HttpPost]
-		public IActionResult AddNewPhone(Phone phone)
+        [HttpPost]	
+		public IActionResult AddNewPhone(Phone phone, int[] selectedFeatureIds)
 		{
-			_phoneRepository.AddPhone(phone);
-			return View();		
-		}
+            if (ModelState.IsValid)
+            {
+                _phoneRepository.AddPhone(phone, selectedFeatureIds);
+                // TODO: Add a success message and meaningful redirection
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(phone);
+        }
 	}
 }
 

@@ -11,8 +11,15 @@ namespace Mobiphony.Services
             _context = context;
         }
 
-        public void AddPhone(Phone phone)
+        public void AddPhone(Phone phone, int[] selectedFeatureIds)
         {
+            if (selectedFeatureIds != null)
+            {
+                foreach (var featureId in selectedFeatureIds)
+                {
+                    phone.Features.Add(new Feature { Id = featureId });
+                }
+            }
             _context.Phones.Add(phone);
             _context.SaveChanges();
         }
