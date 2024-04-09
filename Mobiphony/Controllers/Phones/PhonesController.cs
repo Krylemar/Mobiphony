@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Mobiphony.Models;
-
-namespace Mobiphony.Controllers.Phones
+﻿namespace Mobiphony.Controllers.Phones
 {
+	#region
+	using Microsoft.AspNetCore.Mvc;
+	using Mobiphony.Models;
+	#endregion
+
+	/// <summary></summary>
 	public class PhonesController : Controller
 	{
 		//-------------------------
@@ -12,7 +15,7 @@ namespace Mobiphony.Controllers.Phones
 		//-------------------------
 		//Members:
 		//-------------------------
-		private IPhoneRepository _phoneRepository;
+		//private IPhoneRepository _phoneRepository;
 
 		//-------------------------
 		//Properties:
@@ -21,20 +24,20 @@ namespace Mobiphony.Controllers.Phones
 		//-------------------------
 		//Constructor/Destructor:
 		//-------------------------
-		public PhonesController(IPhoneRepository phoneRepository)
-		{
-			_phoneRepository = phoneRepository;
-		}
+		//public PhonesController(IPhoneRepository phoneRepository)
+		//{
+		//	_phoneRepository = phoneRepository;
+		//}
 
 		//-------------------------
 		//Methods:
 		//-------------------------
-		public IActionResult Phones()
-		{
-			var phones = _phoneRepository.SelectAllPhones;
+		//public IActionResult Phones()
+		//{
+		//	var phones = _phoneRepository.SelectAllPhones;
 
-			return View(phones);
-		}
+		//	return View(phones);
+		//}
 		//-------------------------
 		//Overrides:
 		//-------------------------

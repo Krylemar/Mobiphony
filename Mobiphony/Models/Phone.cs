@@ -1,15 +1,16 @@
-﻿namespace Mobiphony.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mobiphony.Models
 {
-    public class Phones
+    public class Phone
     {
+        [Key]
         public  int Id { get; set; }
 
-		public required string Model { get; set; }
+        public required string Model { get; set; }
 
-
-
-		// Dimentions
-		public  double Length { get; set; }
+        // Dimentions
+        public  double Length { get; set; }
         public  double Width { get; set; }
         public  double Thickness { get; set; }
 
@@ -53,9 +54,6 @@
         public  double SCMP { get; set; }
         public  string? SCVideo { get; set; }
         public  string? SCFeatures { get; set; }
-
-
-
         // Software
         public  string? OS { get; set; }
         public  double WiFiSpeed { get; set; }

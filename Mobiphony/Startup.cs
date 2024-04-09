@@ -1,15 +1,16 @@
-using Mobiphony.Database;
 using Mobiphony.Models;
 using Microsoft.EntityFrameworkCore;
 using MySql.EntityFrameworkCore.Extensions;
 using MySqlConnector;
+using Mobiphony.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddMySQLServer<DatabaseContext>(builder.Configuration["MySQLCloud"]);
-builder.Services.AddScoped<IPhoneRepository, PhonesRepository>();
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseMySQL(builder.Configuration["MySQLCloud"]));
+builder.Services.AddScoped<PhoneRepository>();
 builder.Services
     .AddMySqlDataSource(builder.Configuration["MySQLCloud"])
     .AddHealthChecks().AddMySql(
@@ -22,7 +23,6 @@ app.UseStaticFiles();
 
 if(app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
-
 app.MapDefaultControllerRoute();
 app.UseHealthChecks("/health");
 

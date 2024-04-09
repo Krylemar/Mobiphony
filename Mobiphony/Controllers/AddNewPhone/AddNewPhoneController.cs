@@ -1,39 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Mobiphony.Controllers.AddNewPhone
+﻿namespace Mobiphony.Controllers.AddNewPhone
 {
 	#region
-	#endregion
+	using Microsoft.AspNetCore.Mvc;
+	using Mobiphony.Models;
+    using Mobiphony.Services;
+    #endregion
 
-	/// <summary></summary>
-	public class AddNewPhoneController : Controller
+    /// <summary></summary>
+    public class AddNewPhoneController : Controller
 	{
-		//-------------------------
-		//Constants:
-		//-------------------------
+		private readonly PhoneRepository _phoneRepository;
+		public AddNewPhoneController(PhoneRepository phoneRepository)
+		{
+			_phoneRepository = phoneRepository;
+		}
 
-		//-------------------------
-		//Members:
-		//-------------------------
-
-		//-------------------------
-		//Properties:
-		//-------------------------
-
-		//-------------------------
-		//Constructor/Destructor:
-		//-------------------------
-
-		//-------------------------
-		//Methods:
-		//-------------------------
+		[HttpGet]	
 		public IActionResult AddNewPhone()
 		{
 			return View();
 		}
-		//-------------------------
-		//Overrides:
-		//-------------------------
+
+		[HttpPost]
+		public IActionResult AddNewPhone(Phone phone)
+		{
+			_phoneRepository.AddPhone(phone);
+			return View();		
+		}
 	}
 }
 
