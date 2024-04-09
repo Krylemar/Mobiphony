@@ -32,12 +32,10 @@
 		//-------------------------
 		//Methods:
 		//-------------------------
-		//public IActionResult Phones()
-		//{
-		//	var phones = _phoneRepository.SelectAllPhones;
-
-		//	return View(phones);
-		//}
+		public IActionResult Phones()
+		{
+			return View();
+		}
 		//-------------------------
 		//Overrides:
 		//-------------------------
