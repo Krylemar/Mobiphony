@@ -1,4 +1,7 @@
 ﻿@model Phone
+@ViewData["Brands"]
+@ViewData["CameraFeatures"]
+@ViewData["PhoneFeatures"]
 
 <form asp-action="AddNewPhone" method="post" role="form">
 
@@ -10,6 +13,14 @@
 
 	<div class="col-6">
 		<div class="row g-2">
+			<label asp-for="Brand" class="form-label">Brand</label>
+			<select asp-for="Brand" class="form-select col-12">
+				<option selected>Choose Brand</option>
+				@foreach (Brand brand in ViewData["Brands"] as List<Brand>)
+                {
+                    <option value="@brand.Id">@brand.BrandName</option>
+                }
+			</select>
 			<div class="col-12">
 				<label asp-for="Model" asp-for="Model" class="form-label">Model</label>
 				<input asp-for="Model" asp-for="Model" class="form-control" />
@@ -38,17 +49,21 @@
 				<label asp-for="DisplaySize" class="form-label">Dsize</label>
 				<input asp-for="DisplaySize" class="form-control" />
 			</div>
+			<label asp-for="Matrix" class="form-label">Brand</label>
+			<select asp-for="Matrix" class="form-select col-12">
+				<option selected>Choose Matrix</option>
+				@foreach (DisplayMatrix matrix in ViewData["DisplayMatrices"] as List<DisplayMatrix>)
+				{
+					<option value="@matrix.Id">@matrix.MatrixType</option>
+				}
+			</select>
 			<div class="col-12">
-				<label asp-for="Matrix" class="form-label">Matrix</label>
-				<input asp-for="Matrix" class="form-control" />
+				<label asp-for="RefreshRate" class="form-label">RefreshRate</label>
+				<input asp-for="RefreshRate" class="form-control" />
 			</div>
 			<div class="col-12">
 				<label asp-for="Brightness" class="form-label">Brightness</label>
 				<input asp-for="Brightness" class="form-control" />
-			</div>
-			<div class="col-12">
-				<label asp-for="RefreshRate" class="form-label">RefreshRate</label>
-				<input asp-for="RefreshRate" class="form-control" />
 			</div>
 			<div class="col-12">
 				<label asp-for="Resolution" class="form-label">Resolution</label>
@@ -86,13 +101,26 @@
 				<label asp-for="Usbtype" class="form-label">USBType</label>
 				<input asp-for="Usbtype" class="form-control" />
 			</div>
-			<div class="col-12">
-				<label asp-for="FingerPrint" class="form-label">FingerPrint</label>
-				<input asp-for="FingerPrint" class="form-control" />
+			<div>
+				<label asp-for="FingerPrint" class="form-label">Fingerprint Reader</label>
 			</div>
-			<div class="col-12">
-				<label asp-for="FaceRec" class="form-label">FaceRec</label>
-				<input asp-for="FaceRec" class="form-control" />
+			<div class="btn-group col-12" role="group">
+				<input asp-for="FingerPrint" type="radio" class="btn-check" name="btnradiofp" id="btnradiofpf" autocomplete="off" value="false" checked>
+				<label asp-for="FingerPrint" class="btn btn-outline-primary" for="btnradiofpf">No</label>
+
+				<input asp-for="FingerPrint" type="radio" class="btn-check" name="btnradiofp" id="btnradiofpt" autocomplete="off" value="true">
+				<label asp-for="FingerPrint" class="btn btn-outline-primary" for="btnradiofpt">Yes</label>
+			</div>
+			
+			<div>
+				<label asp-for="FaceRec" class="form-label">Facial Recognition</label>
+			</div>
+			<div class="btn-group col-12" role="group">
+				<input asp-for="FaceRec" type="radio" class="btn-check" name="btnradiofr" id="btnradiofrf" autocomplete="off" value="false" checked>
+				<label asp-for="FaceRec" class="btn btn-outline-primary" for="btnradiofrf">No</label>
+
+				<input asp-for="FaceRec" type="radio" class="btn-check" name="btnradiofr" id="btnradiofrt" autocomplete="off" value="true">
+				<label asp-for="FaceRec" class="btn btn-outline-primary" for="btnradiofrt">Yes</label>
 			</div>
 			<div class="col-12">
 				<label asp-for="BatCapacity" class="form-label">BatCapacity</label>
@@ -110,9 +138,15 @@
 				<label asp-for="MainCamVideo" class="form-label">MCVideo</label>
 				<input asp-for="MainCamVideo" class="form-control" />
 			</div>
-			<div class="col-12 form-group">
-				<label asp-for="CameraFeatures" class="control-label"></label>
-				<select asp-for="CameraFeatures" asp-items="@(new SelectList(ViewBag.CameraFeatures, "Value", "Text"))" multiple class="form-control"></select>
+			<div class="list-group col-12">
+				<label>Camera Features</label>
+				@foreach (CameraFeature feature in ViewData["CameraFeatures"] as List<CameraFeature>)
+				{
+					<label class="list-group-item">
+						<input class="form-check-input me-1" type="checkbox" name="selectedCameraFeatureIds" value="@feature.Id">
+						@feature.Name
+					</label>
+				}
 			</div>
 			<div class="col-12">
 				<label asp-for="SelfCamPhoto" class="form-label">SCMP</label>
@@ -134,13 +168,23 @@
 				<label asp-for="BluetoothVersion" class="form-label">BluetoothVersion</label>
 				<input asp-for="BluetoothVersion" class="form-control" />
 			</div>
-			<div class="col-12 form-group">
-				<label asp-for="Features" class="control-label"></label>
-				<select asp-for="Features" asp-items="@(new SelectList(ViewBag.Features, "Value", "Text"))" multiple class="form-control"></select>
+			<div class="list-group col-12">
+				<label>Features</label>
+				@foreach (Feature feature in ViewData["PhoneFeatures"] as List<Feature>)
+				{
+					<label class="list-group-item">
+						<input class="form-check-input me-1" type="checkbox" name="selectedPhoneFeatureIds" value="@feature">
+						@feature.Name
+					</label>
+				}
 			</div>
 			<div class="col-12">
 				<label asp-for="Price" class="form-label">Price</label>
 				<input asp-for="Price" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="PurchaseLink" class="form-label">Link to store</label>
+				<input asp-for="PurchaseLink" class="form-control" />
 			</div>
 		</div>
 		<div class="mt-2">

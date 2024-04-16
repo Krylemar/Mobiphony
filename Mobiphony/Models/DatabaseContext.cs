@@ -35,6 +35,8 @@ public partial class DatabaseContext : DbContext
         modelBuilder.Entity<Brand>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.Property(e => e.BrandName).HasMaxLength(20);
         });
 
         modelBuilder.Entity<CameraFeature>(entity =>
@@ -81,7 +83,9 @@ public partial class DatabaseContext : DbContext
 
             entity.Property(e => e.Cpu).HasColumnName("CPU");
             entity.Property(e => e.Gpu).HasColumnName("GPU");
-            entity.Property(e => e.Iprating).HasColumnName("IPRating");
+            entity.Property(e => e.Iprating)
+                .HasMaxLength(2)
+                .HasColumnName("IPRating");
             entity.Property(e => e.Os).HasColumnName("OS");
             entity.Property(e => e.Price).HasPrecision(10);
             entity.Property(e => e.Ram).HasColumnName("RAM");

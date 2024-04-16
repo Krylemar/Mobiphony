@@ -19,7 +19,7 @@ public partial class Phone
 
     public int Sim { get; set; }
 
-    public int Iprating { get; set; }
+    public string Iprating { get; set; } = null!;
 
     public double DisplaySize { get; set; }
 
@@ -73,9 +73,9 @@ public partial class Phone
 
     public string? PurchaseLink { get; set; }
 
-    public virtual Brand BrandNavigation { get; set; } = null!;
+    public virtual Brand? BrandNavigation { get; set; }
 
-    public virtual DisplayMatrix MatrixNavigation { get; set; } = null!;
+    public virtual DisplayMatrix? MatrixNavigation { get; set; }
 
     public virtual ICollection<CameraFeature> CameraFeatures { get; set; } = new List<CameraFeature>();
 
