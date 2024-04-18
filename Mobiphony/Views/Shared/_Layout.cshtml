@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="bg">
 <head>
-	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<script src="~lib/jquery/jquery.js"></script>
 	<script src="~lib/bootstrap/js/bootsrap.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -20,7 +20,7 @@
 							<!--<img src="~/img/mobiphony.png" alt="Alternate Text" style="width: 100px; height:100px;"/>-->
 							<i class="bi bi-phone text-success me-2 h3"></i>
 						</a>
-						<a class="navbar-brand" asp-controller="Home" asp-action="Index">Navbar</a>
+						<a class="navbar-brand" asp-controller="Home" asp-action="Index">Mobiphony</a>
 
 						<a class="navbar-brand" asp-controller="Phones" asp-action="AddPhone">Add Phones</a>
 						<a class="navbar-brand" asp-controller="Phones" asp-action="Phone">Phone</a><!-- Will Remove Later ! -->
@@ -40,12 +40,6 @@
 		</header>
 	</div>
 	@RenderBody()
-	@{
-		for (int i = 0; i <= 35; i++)
-		{
-			<br />
-		}
-	}
 	<footer class="bg-dark static-bottom text-center text-white mt-5">
 		<div class="container p-4 pb-0">
 			<section class="mb-4">
