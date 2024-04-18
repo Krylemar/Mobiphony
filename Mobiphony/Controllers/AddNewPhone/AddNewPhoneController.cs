@@ -5,12 +5,14 @@
 	using Mobiphony.Models;
 	#endregion
 
-	/// <summary></summary>
-	public class AddNewPhoneController : Controller
+    /// <summary></summary>
+    public class AddNewPhoneController : Controller
 	{
-		//-------------------------
-		//Constants:
-		//-------------------------
+		private readonly PhoneRepository _phoneRepository;
+		public AddNewPhoneController(PhoneRepository phoneRepository)
+		{
+			_phoneRepository = phoneRepository;
+		}
 
 		//-------------------------
 		//Members:
@@ -50,9 +52,6 @@
 
 			return View();		
 		}
-		//-------------------------
-		//Overrides:
-		//-------------------------
 	}
 }
 

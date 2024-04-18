@@ -16,6 +16,7 @@
 		//Members:
 		//-------------------------
 		private IPhoneRepository _phoneRepository;
+		//private IPhoneRepository _phoneRepository;
 
 		//-------------------------
 		//Properties:
@@ -24,19 +25,17 @@
 		//-------------------------
 		//Constructor/Destructor:
 		//-------------------------
-		public PhonesController(IPhoneRepository phoneRepository)
-		{
-			_phoneRepository = phoneRepository;
-		}
+		//public PhonesController(IPhoneRepository phoneRepository)
+		//{
+		//	_phoneRepository = phoneRepository;
+		//}
 
 		//-------------------------
 		//Methods:
 		//-------------------------
 		public IActionResult Phones()
 		{
-			var phones = _phoneRepository.SelectAllPhones;
-
-			return View(phones);
+			return View();
 		}
 		//-------------------------
 		//Overrides:
