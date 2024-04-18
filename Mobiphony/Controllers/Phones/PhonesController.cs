@@ -15,6 +15,7 @@
 		//-------------------------
 		//Members:
 		//-------------------------
+		private IPhoneRepository _phoneRepository;
 		//private IPhoneRepository _phoneRepository;
 
 		//-------------------------
