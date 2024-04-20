@@ -20,10 +20,9 @@ builder.Services
 var app = builder.Build();
 
 app.UseStaticFiles();
-
+app.UseHealthChecks("/health");
 if(app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 app.MapDefaultControllerRoute();
 
-DbInitializer.Seed(app);
 app.Run();
