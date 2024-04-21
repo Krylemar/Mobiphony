@@ -1,0 +1,14 @@
+﻿@model Phone
+
+<div class="card rounded-2 border border-0" style="width: 8rem; padding: 5px">
+    <a href="#" class="card-link text-decoration-none text-dark-emphasis">
+        <img src="@Url.Content("~/img/"+ @Model.Model.ToLower() + ".jpg")" alt="...">
+        <div class="card-body text-center">
+            <strong>
+                <span>
+                    @Model.Model
+                </span>
+            </strong>
+        </div>
+    </a>
+</div>
