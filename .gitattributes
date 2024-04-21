@@ -61,3 +61,5 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+Mobiphony/wwwroot/lib/bootstrap/* linguist-vendored
+Mobiphony/wwwroot/lib/jquery/* linguist-vendored
