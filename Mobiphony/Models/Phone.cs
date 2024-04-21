@@ -73,6 +73,8 @@ public partial class Phone
 
     public string? PurchaseLink { get; set; }
 
+    public string? ImgLink { get; set; }
+
     public virtual Brand? BrandNavigation { get; set; }
 
     public virtual DisplayMatrix? MatrixNavigation { get; set; }

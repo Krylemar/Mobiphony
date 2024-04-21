@@ -57,18 +57,19 @@
 				});
 			</script>
 			<div class="col-12">
-				<label asp-for="Sim" class="form-label">SIM</label>
-				<input asp-for="Sim" class="form-control" />
+				@*TODO: Make it a select*@
+				<label asp-for="Sim" class="form-label">SIM Slots</label>
+				<input asp-for="Sim" class="form-control"/>
 			</div>
 			<div class="col-12">
-				<label asp-for="Iprating" class="form-label">IPRating</label>
-				<input asp-for="Iprating" class="form-control" />
+				<label asp-for="Iprating" class="form-label">IP Rating</label>
+				<input asp-for="Iprating" class="form-control" placeholder="Ingress protection rating"/>
 			</div>
 			<div class="col-12">
-				<label asp-for="DisplaySize" class="form-label">Dsize</label>
+				<label asp-for="DisplaySize" class="form-label">Maximum Display size</label>
 				<input asp-for="DisplaySize" class="form-control" />
 			</div>
-			<label asp-for="Matrix" class="form-label">Brand</label>
+			<label asp-for="Matrix" class="form-label">Matrix Type</label>
 			<select asp-for="Matrix" class="form-select col-12">
 				<option selected>Choose Matrix</option>
 				@foreach (DisplayMatrix matrix in ViewData["DisplayMatrices"] as List<DisplayMatrix>)
@@ -89,7 +90,7 @@
 				<input asp-for="Resolution" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="ScreenProtection" class="form-label">ScrProtection</label>
+				<label asp-for="ScreenProtection" class="form-label">Screen Protection</label>
 				<input asp-for="ScreenProtection" class="form-control" />
 			</div>
 			<div class="col-12">
@@ -109,15 +110,15 @@
 				<input asp-for="Ram" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="InternalStorage" class="form-label">InternalStorage</label>
+				<label asp-for="InternalStorage" class="form-label">Internal Storage</label>
 				<input asp-for="InternalStorage" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="ExpStorageLimit" class="form-label">ExpStorageLimit</label>
+				<label asp-for="ExpStorageLimit" class="form-label">Expandable Storage Limit</label>
 				<input asp-for="ExpStorageLimit" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="Usbtype" class="form-label">USBType</label>
+				<label asp-for="Usbtype" class="form-label">USB</label>
 				<input asp-for="Usbtype" class="form-control" />
 			</div>
 			<div>
@@ -142,19 +143,19 @@
 				<label asp-for="FaceRec" class="btn btn-outline-primary" for="btnradiofrt">Yes</label>
 			</div>
 			<div class="col-12">
-				<label asp-for="BatCapacity" class="form-label">BatCapacity</label>
+				<label asp-for="BatCapacity" class="form-label">Battery Capacity</label>
 				<input asp-for="BatCapacity" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="BatChargingWattage" class="form-label">BatChargingWattage</label>
+				<label asp-for="BatChargingWattage" class="form-label">Battery Charging Wattage</label>
 				<input asp-for="BatChargingWattage" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="MainCamPhoto" class="form-label">MCMP</label>
+				<label asp-for="MainCamPhoto" class="form-label">Main Camera</label>
 				<input asp-for="MainCamPhoto" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="MainCamVideo" class="form-label">MCVideo</label>
+				<label asp-for="MainCamVideo" class="form-label">Main Camera Video</label>
 				<input asp-for="MainCamVideo" class="form-control" />
 			</div>
 			<div class="list-group col-12">
@@ -168,23 +169,23 @@
 				}
 			</div>
 			<div class="col-12">
-				<label asp-for="SelfCamPhoto" class="form-label">SCMP</label>
+				<label asp-for="SelfCamPhoto" class="form-label">Front Facing Camera</label>
 				<input asp-for="SelfCamPhoto" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="SselfCamVideo" class="form-label">SCVideo</label>
+				<label asp-for="SselfCamVideo" class="form-label">Front Facing Camera Video</label>
 				<input asp-for="SselfCamVideo" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="Os" class="form-label">OS</label>
+				<label asp-for="Os" class="form-label">Operating System</label>
 				<input asp-for="Os" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="WiFiSpeed" class="form-label">WiFiSpeed</label>
+				<label asp-for="WiFiSpeed" class="form-label">Wi-Fi Version</label>
 				<input asp-for="WiFiSpeed" class="form-control" />
 			</div>
 			<div class="col-12">
-				<label asp-for="BluetoothVersion" class="form-label">BluetoothVersion</label>
+				<label asp-for="BluetoothVersion" class="form-label">Bluetooth Version</label>
 				<input asp-for="BluetoothVersion" class="form-control" />
 			</div>
 			<div class="list-group col-12">

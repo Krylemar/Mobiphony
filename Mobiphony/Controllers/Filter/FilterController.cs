@@ -1,22 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mobiphony.Services;
+using Mobiphony.Models;
 
 namespace Mobiphony.Controllers.Filter
 {
 	public class FilterController : Controller
 	{
-		private readonly PhoneRepository _phoneRepository;
+		private readonly DatabaseContext _context;
 
-        public FilterController(PhoneRepository phoneRepository)
+		public FilterController(DatabaseContext context)
         {
-			_phoneRepository = phoneRepository;
+			_context = context;
         }
         public IActionResult Filter()
 		{
-			ViewData["Brands"] = _phoneRepository.GetAllBrands();
-			ViewData["CameraFeatures"] = _phoneRepository.GetAllCameraFeatures();
-			ViewData["PhoneFeatures"] = _phoneRepository.GetAllPhoneFeatures();
-			ViewData["DisplayMatrices"] = _phoneRepository.GetAllDisplayMatrices();
+			ViewData["Brands"] = _context.Brands.ToList();
+			ViewData["CameraFeatures"] = _context.CameraFeatures.ToList();
+			ViewData["PhoneFeatures"] = _context.Features.ToList();
+			ViewData["DisplayMatrices"] = _context.DisplayMatrices.ToList();
 			return View();
 		}
 	}
