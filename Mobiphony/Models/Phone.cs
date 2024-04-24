@@ -17,6 +17,8 @@ public partial class Phone
 
     public double Thickness { get; set; }
 
+    public double Weight { get; set; }
+
     public int Sim { get; set; }
 
     public string Iprating { get; set; } = null!;
@@ -74,6 +76,8 @@ public partial class Phone
     public string? PurchaseLink { get; set; }
 
     public string? ImgLink { get; set; }
+
+    public double Rating { get; set; }
 
     public virtual Brand? BrandNavigation { get; set; }
 

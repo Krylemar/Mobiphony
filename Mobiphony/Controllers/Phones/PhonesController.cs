@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mobiphony.Models;
-using Mobiphony.ViewModels;
 
 namespace Mobiphony.Controllers.Phones
 {
@@ -19,14 +18,17 @@ namespace Mobiphony.Controllers.Phones
 		}
 
 		[HttpGet]
-		public IActionResult PhoneView(int id)
-		{
-			var result = _context.Phones
-				.Include(p => p.Features)
-				.Include(p => p.CameraFeatures)
-				.FirstOrDefault(p => p.Id == id);
-			return View("PhoneView", result);
-		}
+        public IActionResult PhoneView(int id)
+        {
+            var result = _context.Phones
+                .Include(p => p.Features)
+                .Include(p => p.CameraFeatures)
+                .Include(p => p.BrandNavigation)
+                .Include(p => p.MatrixNavigation)
+                .FirstOrDefault(p => p.Id == id);
+            ViewBag.Talktime = new Random().Next(15, 28); // Generate random value from 15 to 27 hours
+            return View("PhoneView", result);
+        }
 
 		public IActionResult Phones()
 		{
@@ -59,6 +61,7 @@ namespace Mobiphony.Controllers.Phones
 					Length = phone.Length,
 					Width = phone.Width,
 					Thickness = phone.Thickness,
+					Weight = phone.Weight,
 					Sim = phone.Sim,
 					Iprating = phone.Iprating,
 					DisplaySize = phone.DisplaySize,
@@ -86,7 +89,8 @@ namespace Mobiphony.Controllers.Phones
 					BatCapacity = phone.BatCapacity,
 					BatChargingWattage = phone.BatChargingWattage,
 					MainCamPhoto = phone.MainCamPhoto,
-					MainCamVideo = phone.MainCamVideo
+					MainCamVideo = phone.MainCamVideo,
+					Rating = phone.Rating
 				};
 
 				newPhone.BrandNavigation = _context.Brands.Find(phone.Brand);
