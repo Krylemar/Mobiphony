@@ -3,7 +3,7 @@
 @ViewData["CameraFeatures"]
 @ViewData["PhoneFeatures"]
 
-<form asp-action="AddNewPhone" method="post" role="form">
+<form asp-action="AddPhone" method="post" role="form">
 
 	<h3 class="addNewPhoneHeader py-2">
 		Please enter new phone information
@@ -32,6 +32,10 @@
 			<div class="col-12">
 				<label asp-for="Width" class="form-label">Width</label>
 				<input asp-for="Width" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="Weight" class="form-label">Weight</label>
+				<input asp-for="Weight" class="form-control" />
 			</div>
 			<div class="col-12">
 				<label asp-for="Thickness" class="form-label">Thickness</label>
@@ -170,11 +174,11 @@
 			</div>
 			<div class="list-group col-12">
 				<label>Features</label>
-				@foreach (Feature feature in ViewData["PhoneFeatures"] as List<Feature>)
+				@foreach (var feature in ViewData["PhoneFeatures"] as List<Feature>)
 				{
 					<label class="list-group-item">
-						<input class="form-check-input me-1" type="checkbox" name="selectedPhoneFeatureIds" value="@feature">
-						@feature.Name
+						<input class="form-check-input me-1" type="checkbox" name="selectedPhoneFeatureIds" value="@feature.Id" />
+					@feature.Name
 					</label>
 				}
 			</div>
@@ -185,6 +189,14 @@
 			<div class="col-12">
 				<label asp-for="PurchaseLink" class="form-label">Link to store</label>
 				<input asp-for="PurchaseLink" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="ImgLink" class="form-label">Link to phone Image</label>
+				<input asp-for="ImgLink" class="form-control" />
+			</div>
+			<div class="col-12">
+				<label asp-for="Rating" class="form-label">Rating</label>
+				<input asp-for="Rating" class="form-control" />
 			</div>
 		</div>
 		<div class="mt-2">
