@@ -8,35 +8,17 @@
     /// <summary>Контролер обслужващ Index.cshtml</summary>
     public class HomeController : Controller
     {
-        //-------------------------
-        //Constants:
-        //-------------------------
-
-        //-------------------------
-        //Members:
-        //-------------------------
-
-        //-------------------------
-        //Properties:
-        //-------------------------
-
-        //-------------------------
-        //Constructor/Destructor:
-        //-------------------------
-
-        //-------------------------
-        //Methods:
-        //-------------------------
-
+        [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.Title = Messages.MSG_WEBISTE_TITLE;
             return View();
         }
 
-        //-------------------------
-        //Overrides:
-        //-------------------------
+        [HttpGet]
+		public IActionResult AboutUs()
+		{
+			return View("AboutUs");
+		}
 
-    }
+	}
 }
