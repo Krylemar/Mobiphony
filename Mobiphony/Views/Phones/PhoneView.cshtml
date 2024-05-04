@@ -1,0 +1,326 @@
+﻿@model Phone
+<div class="container mb-2 pt-5 rounded" style="width: 40%;" data-bs-theme="dark">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+                    <div>
+                        <a class="comparison-item-thumb" href="shop-single.html"><img class="rounded-3" style="width: 12rem" src="@Model.ImgLink" alt="..."></a>
+                    </div>
+                </td>
+                <td class="align-top">
+                    <table>
+                        <tr>
+                            <h1>@Model.BrandNavigation.BrandName @Model.Model</h1>
+                        </tr>
+                        <tr>
+                            <td class="ps-3" colspan="1" style="width: 100px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z" />
+                                    <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3" />
+                                </svg>
+                                <br />
+                                @Model.Cpu
+                            </td>
+                            <td class="ps-3" colspan="1" style="width: 100px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+                                    <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
+                                </svg>
+                                <br />
+                                @Model.DisplaySize-inch
+                            </td>
+                            <td class="ps-3" colspan="1" style="width: 100px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-sd-card" viewBox="0 0 16 16">
+                                    <path d="M6.25 3.5a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0z" />
+                                    <path fill-rule="evenodd" d="M5.914 0H12.5A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5V3.914c0-.398.158-.78.44-1.06L4.853.439A1.5 1.5 0 0 1 5.914 0M13 1.5a.5.5 0 0 0-.5-.5H5.914a.5.5 0 0 0-.353.146L3.146 3.561A.5.5 0 0 0 3 3.914V14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5z" />
+                                </svg>
+                                <br />
+                                @Model.InternalStorage GB
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ps-3" colspan="1" style="width: 100px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-battery" viewBox="0 0 16 16">
+                                    <path d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8" />
+                                </svg>
+                                <br />
+                                @Model.BatCapacity mAh
+                            </td>
+                            <td class="ps-3" style="width: 100px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-battery-charging" viewBox="0 0 16 16">
+                                    <path d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z" />
+                                    <path d="M2 4h4.332l-.94 1H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.38l-.308 1H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2" />
+                                    <path d="M2 6h2.45L2.908 7.639A1.5 1.5 0 0 0 3.313 10H2zm8.595-2-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+                                    <path d="M12 10h-1.783l1.542-1.639q.146-.156.241-.34zm0-3.354V6h-.646a1.5 1.5 0 0 1 .646.646M16 8a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8" />
+                                </svg>
+                                <br />
+                                @Model.BatChargingWattage W
+                            </td>
+                            <td class="ps-3" colspan="1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
+                                    <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z" />
+                                    <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+                                </svg>
+                                <br />
+                                @Model.MainCamPhoto MP
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="align-top">
+                                <a href="@Model.PurchaseLink">
+                                <button class="btn btn-outline-success text-warning" style="width: 300px;" type="button" data-toggle="toast" data-target="#cart-toast">Purchase link</button>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="container pb-5 mb-2 pt-5" style="width: 50%;" data-bs-theme="dark">
+    <div class="comparison-table">
+        <table class="table table-bordered table-hover border-success" style="--bs-border-opacity: .25;">
+            <tbody id="summary" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Summary</th>
+
+                </tr>
+                <tr>
+                    <th>Performance</th>
+                    <td>@Model.Cpu @Model.Chipset</td>
+                </tr>
+                <tr>
+                    <th>Display</th>
+                    <td>@Model.DisplaySize-inch</td>
+                </tr>
+                <tr>
+                    <th>Storage</th>
+                    <td>@Model.InternalStorage GB</td>
+                </tr>
+                <tr>
+                    <th>Camera</th>
+                    <td>@Model.MainCamPhoto-megapixel</td>
+                <tr>
+                    <th>Battery</th>
+                    <td>@Model.BatCapacity mAh</td>
+                </tr>
+            </tbody>
+            <tbody id="general" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">General</th>
+                </tr>
+                <tr>
+                    <th>Charging</th>
+                    <td>@Model.BatChargingWattage W</td>
+                </tr>
+                <tr>
+                    <th>Operating system</th>
+                    <td>@Model.Os</td>
+                </tr>
+                <tr>
+                    <th>Sim slots</th>
+                    <td>@Model.Sim</td>
+                </tr>
+                <tr>
+                    <th>Networks</th>
+                    <td>Wifi: @Model.WiFiSpeed, Bluetooth: @Model.BluetoothVersion</td>
+                </tr>
+                <tr>
+                    <th>USB</th>
+                    <td>@Model.Usbtype</td>
+                <tr>
+                    <th>Facial recognition</th>
+                    <td>@(Model.FaceRec ? "Yes" : "No")</td>
+                </tr>
+                <tr>
+                    <th>Fingerprint sensor</th>
+                    <td>@(Model.FingerPrint ? "Yes" : "No")</td>
+                </tr>
+            </tbody>
+            <tbody id="multimedia" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Multimedia</th>
+                </tr>
+                <tr>
+                    <th>Loudspeaker</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>FM radio</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Headphone jack</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+            <tbody id="performance" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Performance</th>
+                </tr>
+                <tr>
+                    <th>Processor</th>
+                    <td>@Model.Chipset @Model.Cpu</td>
+                </tr>
+                <tr>
+                    <th>Graphics</th>
+                    <td>@Model.Gpu</td>
+                </tr>
+                <tr>
+                    <th>Architecture</th>
+                    <td>64 bit</td>
+                </tr>
+                <tr>
+                    <th>RAM</th>
+                    <td>@Model.Ram GB</td>
+                </tr>
+            </tbody>
+            <tbody id="design" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Design</th>
+                </tr>
+                <tr>
+                    <th>Thickness</th>
+                    <td>@Model.Thickness mm</td>
+                </tr>
+                <tr>
+                    <th>Width</th>
+                    <td>@Model.Width mm</td>
+                </tr>
+                <tr>
+                    <th>Height</th>
+                    <td>@Model.Length mm</td>
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    <td>@Model.Weight grams</td>
+                </tr>
+                <tr>
+                    <th>Waterproof</th>
+                    <td>IP @Model.Iprating</td>
+                </tr>
+                <tr>
+                    <th>Colors</th>
+                    <td>Silver, Space Grey</td>
+                </tr>
+            </tbody>
+            <tbody id="display" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Display</th>
+                </tr>
+                <tr>
+                    <th>Display type</th>
+                    <td>@Model.MatrixNavigation.MatrixType</td>
+                </tr>
+                <tr>
+                    <th>Brightness</th>
+                    <td>@Model.Brightness</td>
+                </tr>
+                <tr>
+                    <th>Screen refresh rate</th>
+                    <td>@Model.RefreshRate Hz (non-LTPO)</td>
+                </tr>
+                <tr>
+                    <th>Screen protection</th>
+                    <td>@Model.ScreenProtection</td>
+                <tr>
+                    <th>Screen size</th>
+                    <td>@Model.DisplaySize inches</td>
+                </tr>
+                <tr>
+                    <th>Screen resolution</th>
+                    <td>@Model.Resolution pixels</td>
+                </tr>
+            </tbody>
+            <tbody id="storage" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Storage</th>
+                </tr>
+                <tr>
+                    <th>Internal memory</th>
+                    <td>@Model.InternalStorage GB</td>
+                </tr>
+                <tr>
+                    <th>Expandable memory</th>
+                    <td>@Model.ExpStorageLimit GB</td>
+                </tr>
+            </tbody>
+            <tbody id="camera" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Camera</th>
+                </tr>
+                <tr>
+                    @{
+                        string cameraFeatures = string.Join(", ", Model.CameraFeatures.Select(cf => cf.Name));
+                    }
+                    <th>Camera features</th>
+                    <td>
+                        @cameraFeatures
+                    </td>
+                </tr>
+                <tr>
+                    <th>Sensor size</th>
+                    <td>@Model.MainCamPhoto MP</td>
+                </tr>
+                <tr>
+                    <th>Video</th>
+                    <td>@Model.MainCamVideo</td>
+                </tr>
+                <tr>
+                    <th>Flash</th>
+                    <td>Yes, Dual flash</td>
+                </tr>
+                <tr>
+                    <th>Selfie camera</th>
+                    <td>@Model.SelfCamPhoto MP</td>
+                </tr>
+                <tr>
+                    <th>Selfie camera video</th>
+                    <td>@Model.SselfCamVideo</td>
+                </tr>
+            </tbody>
+            <tbody id="battery" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Battery</th>
+                </tr>
+                <tr>
+                    <th>Talktime</th>
+                    <td>Up to @ViewBag.Talktime hours(4G)</td>
+                </tr>
+                <tr>
+                    <th>Quick charging</th>
+                    <td>@Model.BatChargingWattage W</td>
+                </tr>
+                <tr>
+                    <th>Wireless charging</th>
+                    <td>Yes</td>
+                </tr
+                <tr>
+                    <th>Capacity</th>
+                    <td>@Model.BatCapacity mAh</td>
+                </tr>
+            </tbody>
+            <tbody id="price" data-filter="target">
+                <tr>
+                    <th colspan="2" class="text-uppercase text-center bg-success bg-opacity-10 text-warning">Price &amp; rating</th>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>$ @Model.Price</td>
+                </tr>
+                <tr>
+                    <th>Rating</th>
+                    <td>@Model.Rating/5</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center bg-success bg-opacity-10">
+                        <a href="@Model.PurchaseLink">
+                            <button class="btn btn-outline-success text-warning" type="button" data-toggle="toast" data-target="#cart-toast">Purchase Link</button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
