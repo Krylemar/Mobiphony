@@ -1,14 +1,132 @@
-﻿<body style="background-color:#1f1f1f">
+﻿@{
+    var AdamColor = "background:linear-gradient(128.87deg,#e666cc 14.05%,#fa97a1 89.3%); -webkit-background-clip: text; color: transparent;";
+    var EdisColor = "background:linear-gradient(128.87deg,#53ceda 14.05%,#9780e5 89.3%); -webkit-background-clip: text; color: transparent;";
+    var To6oColor = "background:linear-gradient(128.87deg,#9780e5 14.05%,#e666cc 89.3%); -webkit-background-clip: text; color: transparent;";
+}
+
+
+<body style="background-color:#1f1f1f">
+    <div class="fw-bold h1 pt-5 text-center" style="@AdamColor">
+        Who are we?
+    </div>
+    <div class="h4 mx-5 text-center">
+        Ullamcorper takimata erat dolore gubergren te kasd exerci diam invidunt ut amet nibh vero amet zzril ullamcorper vero molestie ipsum dolor amet et no kasd ipsum et diam ipsum sea amet nonumy at cum ex dolore erat stet labore voluptua et et feugiat et diam duis iusto ea sed ea
+    </div>
     <div class="container text-center pt-5">
         <div class="row align-items-start">
             <div class="col">
-                <p class="fw-bold h1" style="background:linear-gradient(128.87deg,#e666cc 14.05%,#fa97a1 89.3%); -webkit-background-clip: text; color: transparent;">Adam</p>
+                <p class="fw-bold h1 pb-5" style="@AdamColor">Adam</p>
+                <img class="img-thumbnail rounded-circle w-50 h-50" src="~/img/Adam.jpg" />
+                <p class=" mt-xxl-5 mt-xxl-5 text-start">
+                    <span class="fw-bold h4" style="@AdamColor">Bio  </span>Son pietosa potra e grazia cominciamento dell'occhio dovendo quale nel della apparire e come le da di come in per
+                </p>
+                <p class=" mt-xxl-5 mt-xxl-5 text-start">
+                    <span class="fw-bold h4 align-content-center" style="@AdamColor">Fun facts  </span>
+                    <ul class="text-start">
+                        <li>
+                            Writes C/C++ for relaxation
+                        </li>
+                        <li>
+                            First man
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    <span class="fw-bold h4" style="@AdamColor"> Contact links</span>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-github"></i> Github
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-instagram"></i> Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </p>
             </div>
             <div class="col">
-                <p class="fw-bold h1" style="background:linear-gradient(128.87deg,#53ceda 14.05%,#9780e5 89.3%); -webkit-background-clip: text; color: transparent;">Edis</p>
+                <p class="fw-bold h1 pb-5" style="@EdisColor">Edis</p>
+                <img class="img-thumbnail rounded-circle w-50 h-50" src="~/img/Edis.jpg" />
+                <p class=" mt-xxl-5 mt-xxl-5 text-start">
+                    <span class="fw-bold h4" style="@EdisColor">Bio  </span>Son pietosa potra e grazia cominciamento dell'occhio dovendo quale nel della apparire e come le da di come in per
+                </p>
+                <p class=" mt-xxl-5 mt-xxl-5 text-start">
+                    <span class="fw-bold h4" style="@EdisColor">Fun facts  </span>
+                    <ul class="text-start">
+                        <li class="list-unstyled">
+                            Prefers .NET over Java
+                        </li>
+                        <li>
+                            Hates Microsoft
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    <span class="fw-bold h4" style="@EdisColor"> Contact links</span>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-github"></i> Github
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-instagram"></i> Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </p>
             </div>
             <div class="col">
-                <p class="fw-bold h1" style="background:linear-gradient(128.87deg,#9780e5 14.05%,#e666cc 89.3%); -webkit-background-clip: text; color: transparent;">Todor</p>
+                <p class="fw-bold h1 pb-5" style="@To6oColor">Todor</p>
+                <img class="img-thumbnail rounded-circle w-50 h-50" src="~/img/Todor.jpg" />
+                <p class=" mt-xxl-5 mt-xxl-5 text-start">
+                    <span class="fw-bold h4" style="@To6oColor">Bio  </span>Son pietosa potra e grazia cominciamento dell'occhio dovendo quale nel della apparire e come le da di come in per
+                </p>
+                <p class=" mt-xxl-5 mt-xxl-5 text-start">
+                    <span class="fw-bold h4" style="@To6oColor">Fun facts  </span>
+                    <ul class="text-start">
+                        <li>
+                            Hosts his own Minecraft server on a Raspberry Pi
+                        </li>
+                        <li>
+                            Likes to troll kids in League of Legends
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    <span class="fw-bold h4" style="@To6oColor"> Contact links</span>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-github"></i> Github
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-light btn-floating m-1 w-50" href="https://github.com/Krylemar/Mobiphony" role="button">
+                                <i class="bi bi-instagram"></i> Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </p>
             </div>
         </div>
     </div>
