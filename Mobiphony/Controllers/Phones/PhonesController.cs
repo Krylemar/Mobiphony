@@ -32,7 +32,14 @@ namespace Mobiphony.Controllers.Phones
 
 		public IActionResult Phones()
 		{
-			return View("Phones");
+            ViewData["Features"] = _context.Features.ToList();
+            ViewData["Brands"] = _context.Brands.ToList();
+            var result = _context.Phones
+				.Include(p => p.Features)
+				.Include(p => p.CameraFeatures)
+				.Include(p => p.BrandNavigation)
+				.Include(p => p.MatrixNavigation).ToList();
+            return View("Phones", result);
 		}
 
 		[HttpGet]
