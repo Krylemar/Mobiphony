@@ -9,9 +9,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Database\**" />
+    <Compile Remove="Views\PhoneLogo\**" />
     <Content Remove="Database\**" />
+    <Content Remove="Views\PhoneLogo\**" />
     <EmbeddedResource Remove="Database\**" />
+    <EmbeddedResource Remove="Views\PhoneLogo\**" />
     <None Remove="Database\**" />
+    <None Remove="Views\PhoneLogo\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +33,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Views\PhoneLogo\" />
   </ItemGroup>
 
 </Project>

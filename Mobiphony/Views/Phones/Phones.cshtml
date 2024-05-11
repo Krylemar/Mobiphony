@@ -1,6 +1,10 @@
 ﻿@model IEnumerable<Phone>;
+
 <div class="row pt-5">
     <aside class="col-md-3">
+        <div class="text-center">
+            <a class="btn btn-secondary align-self-center mx-auto" asp-controller="Phones" asp-action="AddPhone">Add a new phone</a>
+        </div>
         ﻿<partial name="_Filter"></partial>
     </aside>
     <main class="col-md-9">
