@@ -20,6 +20,8 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./Mobiphony.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
+USER 0
 WORKDIR /app
 COPY --from=publish /app/publish .
+USER 1001
 ENTRYPOINT ["dotnet", "Mobiphony.dll"]
