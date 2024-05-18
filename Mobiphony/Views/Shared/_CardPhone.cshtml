@@ -1,14 +1,18 @@
 ﻿@model Phone
 
-<div class="card rounded-2 border border-0" style="width: 8rem; padding: 5px">
-    <a href="#" class="card-link text-decoration-none text-dark-emphasis">
-        <img src="@Url.Content("~/img/"+ @Model.Model.ToLower() + ".jpg")" alt="...">
-        <div class="card-body text-center">
-            <strong>
-                <span>
-                    @Model.Model
-                </span>
-            </strong>
-        </div>
-    </a>
+<div class="col-md-4 mb-4">
+    <div class="card rounded-2 border border-0 text-center" style="width: 20rem; padding: 5px">
+        <a asp-controller="Phones" asp-action="PhoneView" asp-route-id="@Model.Id" class="card-link text-decoration-none text-dark-emphasis">
+            <img src="@Model.ImgLink" alt="..." >
+            <div class="card-body text-center">
+                <strong>
+                    <span>
+                        @Model.BrandNavigation.BrandName
+                        <br />
+                        @Model.Model
+                    </span>
+                </strong>
+            </div>
+        </a>
+    </div>
 </div>

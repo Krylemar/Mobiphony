@@ -1,0 +1,73 @@
+﻿<aside class="col">
+    <form asp-action="Filter" method="post" role="form">
+    <div class="card bg-body-tertiary">
+        <article class="filter-group">
+        </article> <!-- filter-group  .// -->
+        <article class="filter-group">
+            <header class="card-header">
+                <h6>Brands</h6>
+            </header>
+            <div class="filter-content collapse show" id="collapse_2" style="">
+                <div class="card-body">
+                    @foreach (var brand in ViewData["Brands"] as List<Brand>)
+                    {
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="brandIds" value="@brand.Id">
+                            <label class="custom-control-label">@brand.BrandName</label>
+                        </div>
+                    }
+                </div> <!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group .// -->
+        <article class="filter-group">
+            <header class="card-header">
+                <h6 class="title">Price range </h6>
+            </header>
+            <div class="filter-content collapse show" id="collapse_3" style="">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Min</label>
+                            <input class="form-control" name="maxprice" placeholder="$0" type="number">
+                        </div>
+                        <div class="form-group text-right col-md-6">
+                            <label>Max</label>
+                            <input class="form-control" name="minprice" placeholder="$1,0000" type="number">
+                        </div>
+                    </div> <!-- form-row.// -->
+                </div><!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group .// -->
+        <article class="filter-group">
+            <header class="card-header">
+                <h6 class="title">Features </h6>
+            </header>
+            <div class="filter-content collapse show" id="collapse_4" style="">
+                <div class="card-body">
+                    @foreach (var feature in ViewData["Features"] as List<Feature>)
+                    {
+                        <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="featureIds" value="@feature.Id">
+                            <label class="custom-control-label">@feature.Name</label>
+                        </div>
+                    }
+                </div><!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group .// -->
+        <article class="filter-group">
+            <header class="card-header">
+                <h6 class="title">Rating </h6>
+            </header>
+            <div class="filter-content collapse show" id="collapse_4" style="">
+                <div class="card-body">
+                    <input type="range" class="custom-controll-input" min="0.1" max="5" step="0.1" oninput="rangeLabel.innerText = this.value" name="rating"/>
+                    <label id="rangeLabel"></label>
+                </div><!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group .// -->
+        <article class="filter-group">
+            <button class="btn btn-block btn-primary mx-auto d-block" type="submit">Apply</button>
+        </article> <!-- filter-group .// -->
+    </div> <!-- card.// -->
+    </form>
+</aside>
